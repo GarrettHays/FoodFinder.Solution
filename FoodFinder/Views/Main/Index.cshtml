@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Food Finder</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="~/css/FoodFinderStyles.css">
+  </head>
+  <body>
+    <div class="mainclass">
+     <div id="mainpage">
+      <h1 id="title">WELCOME TO THE FOOD FINDER</h1>   
+      <p>
+        @Html.ActionLink("See all Restaurants", "Index", "Restaurants", null, new { @class="htmlButtonMain"})
+        @Html.ActionLink("See all Recipes", "Index", "Recipes", null, new { @class="htmlButtonMain"})
+        @Html.ActionLink("See all Ingredients", "Index", "Ingredients", null, new { @class="htmlButtonMain"})
+      </p>
+     </div>
+    </div>
+  </body>
+</html>
