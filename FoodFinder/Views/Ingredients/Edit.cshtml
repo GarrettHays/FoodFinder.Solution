@@ -1,0 +1,27 @@
+@{
+  Layout = "_Layout";
+}
+
+@model FoodFinder.Models.Ingredient
+
+<h2>Edit</h2>
+
+<h4>Edit this Ingredient: @Html.DisplayFor(model => model.Name)</h4>
+
+@using (Html.BeginForm())
+{
+  @Html.HiddenFor(model => model.IngredientId)
+
+  @Html.LabelFor(model => model.Name, "Name:" , new { @class="customLabel"})
+  @Html.EditorFor(model => model.Name)
+
+  @Html.LabelFor(model => model.Description, "Description:" , new { @class="customLabel"})
+  @Html.TextBoxFor(model => model.Description)
+
+  @Html.Label("Select Recipe")
+  @Html.DropDownList("RecipeId")
+
+  <input type="submit" value="Save" class="htmlButton"/>
+}
+
+<p>@Html.ActionLink("Back to list", "Index")</p>
