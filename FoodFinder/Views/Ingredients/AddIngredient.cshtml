@@ -1,0 +1,19 @@
+@{
+  Layout = "_Layout";
+}
+
+@model FoodFinder.Models.Ingredient
+
+<h4>Add a Recipe to this Ingredient: @Html.DisplayFor(model => model.Name)</h4>
+
+@using (Html.BeginForm())
+{
+  @Html.HiddenFor(model => model.IngredientId)
+
+  @Html.Label("Select Recipe")
+  @Html.DropDownList("RecipeId")
+
+  <input type="submit" value="Save" class="htmlButton"/>
+}
+
+<p>@Html.ActionLink("Back to list", "Index")</p>
