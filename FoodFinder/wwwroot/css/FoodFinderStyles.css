@@ -53,6 +53,7 @@ p {
   width: 30%;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 50px;
   
   
   
@@ -302,4 +303,49 @@ h1
 	margin-top: 30px;
 }
 
+.blurbcontain
+{
+  width: 930px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
 
+.trashicon
+{
+  margin-left: 10px;
+}
+
+.recipetrashicon
+{
+  margin-bottom: -2px;
+  margin-left: 5px;
+}
+
+.saveicon
+{
+  margin-bottom: -6.5px;
+  margin-left: 5px;
+}
+
+.addicon
+{
+  margin-bottom: -3px;
+}
+
+.inputspacing
+{
+  margin-top: 20px;
+  padding-inline-start: 5px;
+  word-spacing: 5px;
+}
+
+.ingredientname
+{
+  font-size: 20px;
+}
+
+.ingredientlist
+{
+  margin-top: 10px;
+}
