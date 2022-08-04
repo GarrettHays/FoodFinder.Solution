@@ -4,7 +4,7 @@
 
 @model FoodFinder.Models.Restaurant
 
-<h2>Restaurant Details</h2>
+<h1>RESTAURANT DETAILS:</h1>
 <hr />
 <h3>@Html.DisplayNameFor(model => model.Description): @Html.DisplayFor(model => model.Description)</h3>
 
@@ -23,4 +23,4 @@ else
   </ul>
 }
 
-  <p>@Html.ActionLink("Back to Restaurants", "Index",null, null, new { @class="htmlButton"}) | @Html.ActionLink("Edit Restaurant", "Edit", null, new { id = Model.RestaurantId }, new {@class="htmlButton"}) | @Html.ActionLink("Delete Restaurant", "Delete", null, new { id = Model.RestaurantId }, new { @class="htmlButton"})</p>
+  <p>@Html.ActionLink("Add recipe", "Create", "Recipes", null, new { @class="htmlButton"}) | @Html.ActionLink("Edit Restaurant", "Edit", null, new { id = Model.RestaurantId }, new {@class="htmlButton"}) | @Html.ActionLink("Back to Restaurants", "Index",null, null, new { @class="htmlButton"}) | @Html.ActionLink("Delete Restaurant", "Delete", null, new { id = Model.RestaurantId }, new { @class="htmlButton"})</p>
