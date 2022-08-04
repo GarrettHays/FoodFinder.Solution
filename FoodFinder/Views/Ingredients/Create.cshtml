@@ -4,10 +4,11 @@
 
 @model FoodFinder.Models.Ingredient
 
-<h4>Add a new Ingredient</h4>
+<h1>ADD INGREDIENT:</h1>
 
 @using (Html.BeginForm())
 {
+  <div class="inputspacing">
   @Html.LabelFor(model => model.Name, "Name:" , new { @class="customLabel"})
   @Html.TextBoxFor(model => model.Name)
 
@@ -17,6 +18,7 @@
   @Html.Label("Select Recipe")
   @Html.DropDownList("RecipeId")
 
+  <input type="image" img src="https://raw.githubusercontent.com/GarrettHays/images/main/noun-add-258794.png" class = "addicon" style="width:20px;"/>
+  </div>
 }
-  <input type="submit" value="Add new Ingredient" class="htmlButton" />
   @Html.ActionLink("Show all Ingredients", "Index", null, null, new { @class="htmlButton"})
