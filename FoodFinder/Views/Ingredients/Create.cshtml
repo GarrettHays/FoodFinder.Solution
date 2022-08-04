@@ -17,6 +17,6 @@
   @Html.Label("Select Recipe")
   @Html.DropDownList("RecipeId")
 
-  <input type="submit" value="Add new Ingredient" class="htmlButton" />
 }
-<p>@Html.ActionLink("Show all Ingredients", "Index")</p>
+  <input type="submit" value="Add new Ingredient" class="htmlButton" />
+  @Html.ActionLink("Show all Ingredients", "Index", null, null, new { @class="htmlButton"})
