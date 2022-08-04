@@ -6,18 +6,20 @@
 
 <h1>EDIT:</h1>
 
-<h4>Edit this Restaurant: @Html.DisplayFor(model => model.Description)</h4>
+<h4>Edit this Restaurant: @Html.DisplayFor(model => model.Name)</h4>
 
 @using (Html.BeginForm())
 {
+  <div class="inputspacing">
   @Html.HiddenFor(model => model.RestaurantId)
 
   @Html.LabelFor(model => model.Name, "Name:" , new { @class="customLabel"})
   @Html.TextBoxFor(model => model.Name)
-
+  
   @Html.LabelFor(model => model.Description, "Description:" , new { @class="customLabel"})
   @Html.EditorFor(model => model.Description)
-
-  <input type="submit" value="Save" />
+  
+  <input class = "saveicon" type="image" img src="https://raw.githubusercontent.com/GarrettHays/images/main/noun-save-5040600.png" style="width:20px;"> <a href="@Url.Action("Delete", "Restaurants",  new { id = Model.RestaurantId })"><img class = "trashicon" src="https://raw.githubusercontent.com/GarrettHays/images/main/noun-trash-can-2342129.png" style="width:20px;"></a>
+  </div>
 }
-<p>@Html.ActionLink("Back to Restaurants", "Index",null, null, new { @class="htmlButton"})</p>
+<p>@Html.ActionLink("Back to Restaurants", "Index", null, null, new { @class="htmlButton"})</p>
