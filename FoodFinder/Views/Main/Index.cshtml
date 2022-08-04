@@ -7,15 +7,16 @@
     <link rel="stylesheet" href="~/css/FoodFinderStyles.css">
   </head>
   <body>
-    <div class="mainclass">
      <div id="mainpage">
-      <h1 id="title">WELCOME TO THE FOOD FINDER</h1>   
+      <h1 id="title">WELCOME TO THE FOOD FINDER</h1>  
+      <img src="https://thumbs.dreamstime.com/b/wooden-table-food-top-view-cafe-102532611.jpg" alt="food at table" class="food"> 
+      <h2 id="blurb">Here at the food finder we aim to bring the best restaurants <br> Second line of text.</h2> 
+      
       <p>
         @Html.ActionLink("See all Restaurants", "Index", "Restaurants", null, new { @class="htmlButtonMain"})
-        @Html.ActionLink("See all Recipes", "Index", "Recipes", null, new { @class="htmlButtonMain"})
-        @Html.ActionLink("See all Ingredients", "Index", "Ingredients", null, new { @class="htmlButtonMain"})
+        <!-- @Html.ActionLink("See all Recipes", "Index", "Recipes", null, new { @class="htmlButtonMain"})
+        @Html.ActionLink("See all Ingredients", "Index", "Ingredients", null, new { @class="htmlButtonMain"}) -->
       </p>
      </div>
-    </div>
   </body>
 </html>
