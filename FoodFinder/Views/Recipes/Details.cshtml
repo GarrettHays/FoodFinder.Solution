@@ -10,7 +10,7 @@
 
 @if(@Model.JoinEntities.Count == 0)
 {
-  <p>This Recipe does not belong to any Restaurants</p>
+  <p>This Recipe does not belong to any Restaurants. Click "edit recipe" to add to a Restaurant.</p>
 }
 else
 {
@@ -30,7 +30,7 @@ else
 
 @if(@Model.JoinEntities2.Count == 0)
 {
-  <p>This Recipe does not have any Ingredients</p>
+  <p>This Recipe does not have any Ingredients, you should add some!</p>
 }
 else
 {
@@ -38,19 +38,21 @@ else
   <ul>
   @foreach(var join in Model.JoinEntities2)
   {
-    <li>@Html.ActionLink($"{@join.Ingredient.Name}", "Details", "Ingredients", new { id = @join.Ingredient.IngredientId })</li>
-    @using (Html.BeginForm("DeleteIngredient", "Recipes"))
-    {
-      @Html.Hidden("joinId", @join.IngredientRecipeId)
-      <input type="submit" value="Delete" class="htmlButton"/>
-    }
+    <div class="ingredientlist">
+      <li>
+      @using (Html.BeginForm("DeleteIngredient", "Recipes"))
+      {
+        @Html.Hidden("joinId", @join.IngredientRecipeId)
+        @Html.ActionLink($"{@join.Ingredient.Name}", "Details", "Ingredients", new { id = @join.Ingredient.IngredientId, }, new { @class ="ingredientname"})
+        <input class = "recipetrashicon" type = "image" img src="https://raw.githubusercontent.com/GarrettHays/images/main/noun-trash-can-2342129.png" style="width:20px;">    
+      }
+      </li>
+    </div>
   }
   </ul>
 }
 
-<p>@Html.ActionLink("Add a Restaurant", "Create", "Restaurants", new { id = Model.RecipeId }, new { @class ="htmlButton"})
-@Html.ActionLink("Add an Ingredient", "Create", "Ingredients", null, new { @class ="htmlButton"})</p>
-
-<p>@Html.ActionLink("Edit Recipe", "Edit", null, new { id = Model.RecipeId }, new { @class ="htmlButton"})
-@Html.ActionLink("Delete Recipe", "Delete", null, new { id = Model.RecipeId }, new { @class ="htmlButton"})
-@Html.ActionLink("Back to Recipes", "Index",null, null, new { @class ="htmlButton"})</p>
+<p>
+@Html.ActionLink("Add an Ingredient", "Create", "Ingredients", null, new { @class ="htmlButton"}) |
+@Html.ActionLink("Edit Recipe", "Edit", null, new { id = Model.RecipeId }, new { @class ="htmlButton"})
+</p>
