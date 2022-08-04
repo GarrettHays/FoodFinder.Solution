@@ -23,7 +23,7 @@ namespace FoodFinder.Controllers
 
     public ActionResult Create()
     {
-      ViewBag.RestaurantId = new SelectList(_db.Restaurants, "RestaurantId", "Description");
+      ViewBag.RestaurantId = new SelectList(_db.Restaurants, "RestaurantId", "Name");
       return View();
     }
 
@@ -67,7 +67,7 @@ namespace FoodFinder.Controllers
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
-
+       // change description on 74 to name maybe?
     public ActionResult AddRestaurant(int id)
     {
       var thisRecipe = _db.Recipes.FirstOrDefault(Recipe => Recipe.RecipeId == id);
