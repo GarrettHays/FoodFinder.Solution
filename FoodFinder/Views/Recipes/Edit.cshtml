@@ -10,6 +10,7 @@
 
 @using (Html.BeginForm())
 {
+  <div class="inputspacing">
   @Html.HiddenFor(model => model.RecipeId)
 
   @Html.LabelFor(model => model.Name, "Name:" , new { @class="customLabel"})
@@ -21,7 +22,6 @@
   @Html.Label("Select Restaurant")
   @Html.DropDownList("RestaurantId")
 
-  <input type="submit" value="Save" />
+  <input class = "saveicon" type="image" img src="https://raw.githubusercontent.com/GarrettHays/images/main/noun-save-5040600.png" style="width:20px;"> <a href="@Url.Action("Delete", "Recipes",  new { id = Model.RecipeId })"><img class = "trashicon" src="https://raw.githubusercontent.com/GarrettHays/images/main/noun-trash-can-2342129.png" style="width:20px;"></a>
+  </div>
 }
-
-<p>@Html.ActionLink("Back to Recipes", "Index",null, null, new { @class="htmlButton"})</p>
