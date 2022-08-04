@@ -4,7 +4,7 @@
 
 @model FoodFinder.Models.Recipe
 
-<h4>Add a new Recipe</h4>
+<h1>ADD RECIPE:</h1>
 
 @using (Html.BeginForm())
 {
@@ -14,7 +14,7 @@
   @Html.LabelFor(model => model.Description, "Description:" , new { @class="customLabel"})
   @Html.EditorFor(model => model.Description)
   <br>
-  @Html.Label("Select Restaurant", "Select Restaurant:")
+  @Html.Label("Select Restaurant", "Select Restaurant:" , new { @class="customLabel"})
   @Html.DropDownList("RestaurantId")
   <br>
   <input type="submit" value="Add new Recipe" class="htmlButton" />
